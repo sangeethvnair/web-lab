@@ -1,34 +1,44 @@
 <!DOCTYPEhtml>
 <html>
 <head>
-<tittle<login validation</title>
+<title>login page</title>
 <script>
 	function checkValue()
 	{
 		let user=document.getElementById("user").value;
-		let pattern=/\w+@\w+\.\w+/;
-		let pass=document.getElementById("pass").value
-		if(!pattern.test(user))
+		let pass=document.getElementById("pass").value;
+		if(user=="" && pass=="")
 		{
-			document.getElementById("p1").innerHTML="invalid mail format";
+			document.getElementById("p1").innerHTML="username required";
+			document.getElementById("p2").innerHTML="password required";
 		}
-		if(!(pass.length <=8 && pass.length>=5))
-		{
-			document.getElementById("p2").innerHTML="password must 6-8 numbers";
-		}
-		if(pattern.test(user) && (pass.length <=8 && pass.length >=5))
-		{
-			document.getElementById("p3").innerHTML="login success";
+		else{
+		    if(user=="")
+			{
+				document.getElementById("p1").innerHTML="username required";
+			}
+		     if(pass=="")
+			{
+				document.getElementById("p2").innerHTml="password required";
+			}
+			if(!(pass.length <=8 && pass.length >=5))
+			{
+				document.getElementById("p2").innerHTML="password must 6-8 numbers";
+			}
+		    else
+			{
+				document.getElementById("p3").innerHTML="login success";
+			}
 		}
 	}
 </script>
 </head>
 <body>
-	username:<input type="text" id="user" placeholder="UserName"><br><br>
+	username:<input type="text" id="user" placeholder="username"><br><br>
 	<p id="p1"></p><br>
-	password:<input typr="password" id="pass" placeholder="password"><br><br>
-	<p id="p2"></p><br>
+	password:<input type="password" id="pass" placeholder"password"><br><br>
+	<p id="pass></p><br>
 	<button onclick=checkValue()>submit</button>
-	<p id="p3"></p><br><br>
+	<p id="p3"></p><br>
 </body>
-</html>
+</html>		
